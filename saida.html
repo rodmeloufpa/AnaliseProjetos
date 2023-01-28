@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saidas de Emergência</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>SAÍDAS DE EMERGÊNCIA</h1>
+
+<br><br>
+
+<fieldset>
+ <legend class="titulo">RESULTADOS</legend>
+ <label for="area"><strong>Área:</strong></label>
+ <input type="number" id="area" name="area" placeholder="Digite a Área">
+  
+ <button type="button" onclick="populacao()">Calcular</button>
+ <br><br>
+
+<form action="">
+   
+  <table class="minhaTabela">
+ <tr>
+   <th style="background-color: rgb(90, 151, 205);text-align: center;font-weight: bold;">População</th>
+   <th style="background-color: orange ;text-align: center; font-weight: bold;">Quantidade Mínima de Saídas</th>
+   <th style="background-color: violet;text-align: center;font-weight: bold;">Largura Mínima da Porta</th>
+ </tr>
+ <tr>
+   <td style="text-align: center;background-color:  aquamarine;"><span id="resultado"></span></td>
+   <td style="text-align: center; background-color: aquamarine;"><span id="numeroSaidas"></span></td>
+   <td style="text-align: center; background-color: aquamarine;"><span id="larguraSaida"></td>
+ </tr>
+  </table>
+  <br><br>
+</fieldset>
+<br><br>
+
+
+
+   <table class="minhaTabela">
+  <caption class="titulo">Grupo A - Residencial</caption>
+  <tr>
+<th > Divisão </th>
+<th> Descrição </th>
+<th > Exemplos </th>
+<th > Característica dos Ocupantes </th>
+<th > Velocidade Desenvolvimento do Incêndio </th>
+<th  > Perfil Risco à Vida </th>
+  </tr>
+  <tr>
+<td  ><input type="radio" id="A1" name="densidade" value="4">A1</td>
+<td  ><label for="A1">Habitação unifamiliar</label></td>
+<td  >Casas térreas ou assobradadas (isoladas e não isoladas) e condomínios horizontais.</td>
+<td  >--</td>
+<td  >--</td>
+<td  >--</td>
+  </tr>
+  <tr>
+<td  ><input type="radio" id="A2" name="densidade" value="7">A2</td>
+<td  ><label for="A2">Habitação Multifamiliar</label></td>
+<td  >Edifícios apartamento em geral.</td>
+<td  >ci</td>
+<td  >2</td>
+<td  >ci2</td>
+  </tr>
+  <tr>
+<td  ><input type="radio" id="A3" name="densidade" value="1">A3</td>
+<td  ><label for="A3">Habitação coletiva </label></td>
+<td  >Internatos, alojamentos,conventos, máxima de 16 leitos, sem acompanhamento médico.</td>
+<td  >Cii</td>
+<td  >2</td>
+<td  >Cii2</td>
+  </tr>
+</table>
+
+<br><br>
+
+<table class="minhaTabela">
+  <caption>Grupo B - Serviço de Hospedagem</caption>
+  <tr>
+<th  > Divisão </th>
+<th  > Descrição </th>
+<th  > Exemplos </th>
+<th  > Característica dos Ocupantes </th>
+<th  > Velocidade Desenvolvimento do Incêndio </th>
+<th  > Perfil Risco à Vida </th>
+  </tr>
+  <tr>
+<td   > <input type="radio" id="B1" name="densidade" value="3">B1</td>
+<td   ><label for="B1"> Hotel e assemelhado.</label>B1</td>
+<td   >Hotéis, motéis, hospedarias,albergues, divisão A3 com mais de 16 leitos</td>
+<td   >Cii</td>
+<td   >2</td>
+<td   >Ciii2</td>
+  </tr>
+  <tr>
+<td   > <input type="radio" id="B2" name="densidade" value="0.33">B2</td>
+<td   ><label for="B2"></label>Hotel residencial</td>
+<td   >Hotéis com cozinha própria nos apartamentos(apart-hotéis,hotéis residenciais</td>
+<td   >Cii</td>
+<td   >2</td>
+<td   >Cii2</td>
+  </tr>
+   </table>
+
+   <br><br>
+
+   <table class="minhaTabela">
+  <caption>Grupo C - Comercial</caption>
+  <tr>
+<th  >Divisão</th>
+<th  >Descrição</th>
+<th  >Exemplos</th>
+<th  >Característica dos Ocupantes</th>
+<th  >Velocidade Desenvolvimento do Incêndio</th>
+<th  >Perfil Risco à Vida</th>
+  </tr>
+  <tr>
+<td><input type="radio" id="C1" name="densidade" value="3">C1</td>
+<td> <label for="C1">Comércio c/ baixa carga incêndio </label></td>
+<td>Armarinhos, artigos hospitalares e outros.</td>
+<td>b</td>
+<td>1</td>
+<td>b1</td>
+  </tr>
+  <tr>
+<td><input type="radio" id="C2" name="densidade" value="4">C2</td>
+<td><label for="C2"> Comércio c/ média e alta carga incêndio</label></td>
+<td>Edifícios de lojas de departamentos, galerias, supermercados, mercados.</td>
+<td>b</td>
+<td>2</td>
+<td>b2</td>
+  </tr>
+  <tr>
+<td><input type="radio" id="C3" name="densidade" value="7">C3</td>
+<td> <label for="C3">Centro de compras</label></td>
+<td>Centro de compras em geral (shopping centers).</td>
+<td>b</td>
+<td>3</td>
+<td>b3</td>
+  </tr>
+</table>
+
+<br><br>
+
+<table class="minhaTabela">
+  <caption style="text-align: left; font-weight: bold;">Grupo D - Serviço Profissional</caption>
+  <tr>
+<th  >Divisão</th>
+<th  >Descrição</th>
+<th  >Exemplos</th>
+<th  >Característica dos Ocupantes</th>
+<th  >Velocidade Desenvolvimento do Incêndio</th>
+<th  >Perfil Risco à Vida</th>
+  </tr>
+  <tr>
+<td><input type="radio" id="D1" name="densidade" value="1">D1</td>
+<td> <label for="D1">Local p/ prestação de serviço profissional ou condução de negócios </label></td>
+<td>Escritórios administrativos ou técnicos, instituições financeiras (que não estejam incluídas em D-2), repartições públicas, cabeleireiros, centros profissionais e assemelhados.</td>
+<td> a (sem público rotativo)</td>
+<td>2</td>
+<td>a2</td>
+  </tr>
+  <tr>
+<td><input type="radio" id="D2" name="densidade" value="3">D2</td>
+<td><label for="D2"> Agência bancária</label></td>
+<td>Agências bancárias</td>
+<td>b</td>
+<td>2</td>
+<td>b2</td>
+  </tr>
+  <tr>
+<td> <input type="radio" id="D3" name="densidade" value="0.33">D3</td>
+<td><label for="D3">Serviço de reparação, exceto classificados em G4 </label></td>
+<td>Lavanderias, assistência técnica, manutenção eletrodomésticos, chaveiros, pintura de letreiros</td>
+<td>a</td>
+<td>3</td>
+<td>a3</td>
+  </tr>
+  <tr>
+<td> <input type="radio" id="D4" name="densidade" value="3">D4</td>
+<td><label for="D4">Laboratório</label></td>
+<td>Laboratórios de análises clínicas sem internação, laboratórios químicos, fotográficos</td>
+<td>b</td>
+<td>3</td>
+<td>b3</td>
+   </tr>
+</table>
+<br><br>
+
+<table class="minhaTabela">
+  <caption style="text-align: left; font-weight: bold;">Grupo E - Educacional, Cultura Física</caption>
+  <tr>
+<th>Divisão</th>
+<th>Descrição</th>
+<th>Exemplos</th>
+<th>Característica dos Ocupantes</th>
+<th>Velocidade de Desenvolvimento do Incêndio</th>
+<th>Perfil Risco à Vida</th>
+  </tr>
+  <tr>
+<td><input type="radio" id="E1" name="densidade" value="4">E1</td>
+<td><label for="E1">Escola em geral</label></td>
+<td>Escolas (fundamental e médio), supletivos e pré-universitários</td>
+<td>a</td>
+<td>2</td>
+<td>a2</td>
+  </tr>
+  <tr>
+<td><input type="radio" id="E2" name="densidade" value="7">E2</td>
+<td><label for="E2">Escola especial</label></td>
+<td>Escolas de artes e artesanato, de línguas, religiosas</td>
+<td>a</td>
+<td>2</td>
+<td>a2</td>
+  </tr>
+  <tr>
+<td><input type="radio" id="E3" name="densidade" value="1">E3</td>
+<td><label for="E3">Espaço para cultura física</label></td>
+<td>E3: Locais de artes marciais, ginásticas, esportes coletivos (não estejam incluídos em F-3), sauna, casas de fisioterapia.</td>
+<td>a</td>
+<td>2</td>
+<td>a2</td>
+  </tr>
+  <tr>
+<td><input type="radio" id="E4" name="densidade" value="3">E4</td>
+<td><label for="E4">Centro treinamento profissional</label></td>
+<td>Escolas profissionais em geral.</td>
+<td>a</td>
+<td>2</td>
+<td>a2</td>
+  </tr>
+  <tr>
+<td><input type="radio" id="E5" name="densidade" value="0.33">E5</td>
+<td><label for="E5">Pré-escola</label></td>
+<td>Creches, jardins-de-infância.</td>
+<td>d</td>
+<td>2</td>
+<td>d2</td>
+  </tr>
+  <tr>
+<td><input type="radio" id="E6" name="densidade" value="3">E6</td>
+<td><label for="E6">Escola p/ portadores de deficiências</label></td>
+<td>Escolas p/ excepcionais, deficientes visuais e auditivos</td>
+<td>d</td>
+<td>2</td>
+<td>d2</td>
+  </tr>
+</table>
+<br><br>
+
+<table class="minhaTabela">
+  <caption style="font-weight: bold; text-align: left;">Grupo F - Local de Reunião de Público</caption>
+  <tr>
+<th>Divisão</th>
+<th>Descrição</th>
+<th>Exemplos</th>
+<th>Característica dos Ocupantes</th>
+<th>Velocidade do Desenvolvimento do Incêndio</th>
+<th>Risco à Vida</th>
+  </tr>
+  <tr>
+<td><input type="radio" id="F1" name="densidade" value="0.33">F1</td>
+<td><label for="F1">Local onde há objeto de valor inestimável.</label></td>
+<td>Museus e assemelhados.</td>
+<td>b</td>
+<td>2</td>
+<td>b2</td>
+  </tr>
+  <tr>
+<td><input type="radio" id="F1" name="densidade" value="0.33">F1</td>
+<td><label for="F1">Local onde há objeto de valor inestimável.</label></td>
+<td>Arquivos, Bibliotecas assemelhados.</td>
+<td>b</td>
+<td>3</td>
+<td>b3</td>
+  </tr>
+  <tr>
+<td><input type="radio" id="F2" name="densidade" value="0.33">F3</td>
+<td> <label for="F2">Local religioso e velório.</label></td>
+<td>Igrejas, templos, cemitérios, crematórios,salas de funerais.</td>
+<td>b</td>
+<td>2</td>
+<td>b2</td>
+  </tr>
+  <tr>
+<td><input type="radio" id="F3" name="densidade" value="0.33">F3</td>
+<td><label for="F3">Centro esportivo e de exibição.</label></td>
+<td>Estádios, ginásios, autódromos, sambódromos, arenas em geral com arquibancadas (sem camarotes e/ou decoração).</td>
+<td>b</td>
+<td>1</td>
+<td>b1</td>
+  </tr>
+  <tr>
+<td><input type="radio" id="F3" name="densidade" value="0.33">F3</td>
+<td><label for="F3">Centro esportivo e de exibição.</label></td>
+<td>Estádios, ginásios, autódromos, sambódromos, arenas em geral com arquibancadas (sem uso de materiais ou equipamentos sintéticos que conduzem rapidamente a inflamação generalizada).</td>
+<td>b</td>
+<td>2</td>
+<td>b2</td>
+  </tr>
+  <tr>
+<td><input type="radio" id="F3" name="densidade" value="0.33"></td>
+<td><label for="F3">Centro esportivo e de exibição.</label></td>
+<td>F3: Estádios,  ginásios, autódromos, sambódromos, arenas em geral com arquibancadas (com uso de materiais ou equipamentos sintéticos que conduzem rapidamente a inflamação generalizada).</td>
+<td>b</td>
+<td>3</td>
+<td>b3</td>
+  </tr>
+  <tr>
+<td><input type="radio" id="F4" name="densidade" value="0.33">F4</td>
+<td><label for="F4">Estação e terminal de passageiro.</label></td>
+<td>Estações de transbordo (rodoferroviárias, portos, aeroportos, heliponto).</td>
+<td>e</td>
+<td>3</td>
+<td>e3</td>
+  </tr>
+  <tr>
+<td><input type="radio" id="F5" name="densidade" value="0.33">F5</td>
+<td><label for="F5">Arte, cênica eauditório</label></td>
+<td>F5: Teatros em geral, cinemas, óperas, auditórios de estúdios de rádio tv, auditórios em geral e assemelhados.</td>
+<td>b</td>
+<td>3</td>
+<td>b3</td>
+  </tr>
+  <tr>
+<td><input type="radio" id="F6" name="densidade" value="0.33">F6</td>
+<td>Clubes sociais e Diversão.<label for="F6"></label></td>
+<td>Boates, salões de baile, restaurantes dançantes, clubes sociais, bilhares, boliche e casa de show (sem uso de materiais ou equipamentos sintéticos que conduzem rapidamente a inflamação generalizada).</td>
+<td>b</td>
+<td>2</td>
+<td>b2</td>
+  </tr>
+  <tr>
+<td><input type="radio" id="F6a" name="densidade" value="0.33">F6</td>
+<td><label for="F6a">Clubes sociais e Diversão.</label></td>
+<td>Boates, salões de baile, restaurantes dançantes, clubes sociais, bilhares, boliche e casa de show (com uso de materiais ou equipamentos sintéticos que conduzem rapidamente a inflamação generalizada).</td>
+<td>b</td>
+<td>3</td>
+<td>b3</td>
+  </tr>
+  <tr>
+<td><input type="radio" id="F7" name="densidade" value="0.33">F7</td>
+<td><label for="F7">Construção provisória.</label></td>
+<td>Circos, feiras em geral e assemelhados, com o uso de material pouco combustível, distribuído de modo descontínuo</td>
+<td>b</td>
+<td>1</td>
+<td>b1</td>
+  </tr>
+  <tr>
+<td><input type="radio" id="F7a" name="densidade" value="0.33">F7</td>
+<td><label for="F7a">Construção provisória.</label></td>
+<td>Circos, feiras em geral e assemelhados (sem uso de materiais ou equipamentos sintéticos que conduzem rapidamente a inflamação generalizada).</td>
+<td>b</td>
+<td>2</td>
+<td>b2</td>
+  </tr>
+  <tr>
+<td><input type="radio" id="F7b" name="densidade" value="0.33">F7</td>
+<td><label for="F7b">Construção provisória.</label></td>
+<td>Circos, feiras em geral e assemelhados (com uso de materiais ou equipamentos sintéticos que conduzem rapidamente a inflamação generalizada).</td>
+<td>b</td>
+<td>3</td>
+<td>b3</td>
+  </tr>
+  <tr>
+<td><input type="radio" id="F8" name="densidade" value="0.33">F8</td>
+<td><label for="F8">Local para refeição.</label></td>
+<td>Refeitórios, cantinas, boteco</td>
+<td>b</td>
+<td>1</td>
+<td>b1</td>
+  </tr>
+  <tr>
+<td><input type="radio" id="F8a" name="densidade" value="0.33">F8</td>
+<td><label for="F8a">Local para refeição</label></td>
+<td>Restaurante, lanchonetes, cafés, bares</td>
+<td>b</td>
+<td>2</td>
+<td>b2</td>
+  </tr>
+  <tr>
+<td><input type="radio" id="F9" name="densidade" value="0.33">F9</td>
+<td><label for="F9">Recreação pública.</label></td>
+<td>Jardim zoológico, parques recreativos e assemelhados. Edificações permanentes</td>
+<td>b</td>
+<td>2</td>
+<td>b2</td>
+  </tr>
+  <tr>
+<td><input type="radio" id="F10" name="densidade" value="0.33">F10</td>
+<td><label for="F10">Exposição de objetos e animais.</label></td>
+<td>Salas de exposição de objetos e animais, show-room, galerias de arte, planetários, e assemelhados, com o uso de material pouco combustível,distribuído de modo descontínuo.</td>
+<td>b</td>
+<td>1</td>
+<td>b1</td>
+  </tr>
+  <tr>
+<td><input type="radio" id="F10a" name="densidade" value="0.33">F10</td>
+<td><label for="F10a">Exposição de objetos e animais.</label></td>
+<td> Salas de exposição de objetos e animais, show-room, galerias de arte, planetários, e assemelhados (sem uso de materiais ou equipamentos sintéticos que conduzem rapidamente a inflamação generalizada)</td>
+<td>b</td>
+<td>2</td>
+<td>b2</td>
+  </tr>
+  <tr>
+<td><input type="radio" id="F10b" name="densidade" value="0.33">F10</td>
+<td><label for="F10b">Exposição de objetos e animais.</label></td>
+<td>Salas de exposição de objetose animais, show-room, galerias  de arte, planetários,e assemelhados (com uso de materiais ou equipamentos sintéticos que conduzem rapidamente a inflamação generalizada)</td>
+<td>b</td>
+<td>3</td>
+<td>b3</td>
+  </tr>
+  
+
+</table>
+<br><br>
+
+<table class="minhaTabela">
+  <caption style="font-weight:bold; text-align: left;">Grupo G - Serviços Automotivos e Assemelhados</caption>
+  <tr>
+<th>Divisão</th>
+<th>Descrição</th>
+<th>Exemplos</th>
+<th>Característica dos Ocupantes</th>
+<th>Velocidade de Desenvolvimento do Incêndio</th>
+<th>Perfil Risco à Vida</th>
+  </tr>
+  <tr>
+<td><input type="radio" id="G1" name="densidade" value="0.33">G1</td>
+<td><label for="G1">Garagem s/ acesso de público e s/abastecimento.</label></td>
+<td>G1: Garagens automáticas.</td>
+<td>a</td>
+<td>2</td>
+<td>a2</td>
+  </tr>
+  <tr>
+<td><input type="radio" id="G2" name="densidade" value="0.33">G2</td>
+<td><label for="G2">Garagem c/ acesso de público e s/ abastecimento.</label></td>
+<td>Garagens coletivas sem automação.</td>
+<td>b</td>
+<td>2</td>
+<td>b2</td>
+  </tr>
+  <tr>
+<td><input type="radio" id="G3" name="densidade" value="0.33">G3</td>
+<td><label for="G3"></label></td>
+<td>Postos de abastecimento e serviço (exceto veículos de carga e coletivos)</td>
+<td>b</td>
+<td>2</td>
+<td>b2</td>
+  </tr>
+  <tr>
+<td><input type="radio" id="G4" name="densidade" value="0.33">G4</td>
+<td> <label for="G4"></label></td>
+<td>Oficinas de conserto de veículos, borracharia (sem recauchutagem). Oficinas de veículos de carga e coletivos,máquinas agrícolas e rodoviárias, retificadoras de motores.</td>
+<td>a</td>
+<td>3</td>
+<td>a3</td>
+  </tr>
+  <tr>
+<td><input type="radio" id="G5" name="densidade" value="0.33">G5</td>
+<td><label for="G5">Hangares</label></td>
+<td>Abrigos para aeronaves com ou sem abastecimento.</td>
+<td>a</td>
+<td>2</td>
+<td>a2  </td>
+  </tr>
+  <tr>
+<td><input type="radio" id="G6" name="densidade" value="0.33">G6</td>
+<td><label for="G6"></label></td>
+<td>Garagem de veículos de carga e coletivos.</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+  </tr>
+</table>
+<br><br>
+
+<table class="minhaTabela">
+  <caption style="font-weight:bold; text-align: left;">Grupo H - Serviços de Saúde e Institucional</caption>
+  <tr>
+<th>Divisão</th>
+<th>Descrição</th>
+<th>Exemplos</th>
+<th>Característica dos Ocupantes</th>
+<th>Velocidade de Desenvolvimento do Incêndio</th>
+<th>Perfil Risco à Vida</th>
+  </tr>
+  <tr>
+<td><input type="radio" id="H1" name="densidade" value="0.33">H1</td>
+<td><label for="H1"></label></td>
+<td>Hospitais, clínicas veterinárias</td>
+<td>Ciii</td>
+<td>2</td>
+<td>Ciii2</td>
+  </tr>
+  <tr>
+<td><input type="radio" id="H2" name="densidade" value="0.33">H2</td>
+<td><label for="H2">Locais onde pessoas requerem cuidados especiais por limitações físicas ou mentais</label></td>
+<td>H2: Asilos,orfanatos, abrigos geriátricos, hospitais psiquiátricos, reformatórios,tratamento de dependentes químicos, e assemelhados.Todos sem celas.</td>
+<td>d</td>
+<td>2</td>
+<td>d2</td>
+  </tr>
+  <tr>
+<td><input type="radio" id="H3" name="densidade" value="0.33">H3</td>
+<td><label for="H3">Hospital e assemelhado.</label></td>
+<td>Hospitais, casa de saúde, prontos-socorros, clínicas c/internação,postos de atendimento de urgência, postos de saúde eassemelhados c/ internação.</td>
+<td>d</td>
+<td>2</td>
+<td>d2</td>
+  </tr>
+  <tr>
+<td><input type="radio" id="H4" name="densidade" value="0.33">H4</td>
+<td><label for="H4">Repartição pública, edificações das forças armadas e policiais.</label></td>
+<td>Edificações do Executivo, Legislativo e Judiciário, tribunais, cartórios, quartéis, centrais de polícia, delegacias, postos policiais.</td>
+<td>Cii (sem público rotativo)</td>
+<td>2</td>
+<td>Cii2</td>
+  </tr>
+  <tr>
+<td><input type="radio" id="H4a" name="densidade" value="0.33">H4</td>
+<td><label for="H4a">Repartição pública, edificações das forças armadas e policiais.</label></td>
+<td>Edificações do Executivo, Legislativo e Judiciário, tribunais, cartórios, quartéis, centrais de polícia, delegacias, postos policiais.</td>
+<td>b (com público rotativo)</td>
+<td>2</td>
+<td>b2</td>
+  </tr>
+  <tr>
+<td><input type="radio" id="H5" name="densidade" value="0.33"><H5></H5></td>
+<td><label for="H5">Local onde a liberdade das pessoas sofre restrições.</label></td>
+<td>Hospitais psiquiátricos,manicômios, reformatórios, prisões em geral (casa de detenção, penitenciárias, presídios) e instituições assemelhadas. Todos com celas</td>
+<td>d</td>
+<td>2</td>
+<td>d2</td>
+  </tr>
+  <tr>
+<td><input type="radio" id="H6" name="densidade" value="0.33">H6</td>
+<td><label for="H6">Clínicas médicas, odontológicas e veterinárias.</label></td>
+<td>Clínicas médicas em geral, unidades de hemodiálise, ambulatórios e assemelhados.Todos sem internação.</td>
+<td>d</td>
+<td>2</td>
+<td>d2</td>
+  </tr>
+</table>
+
+<br><br>
+
+<table class="minhaTabela">
+  <caption style="font-weight: bold; text-align: left;">Grupo I - Indústria</caption>
+  <tr>
+<th>Divisão</th>
+<th>Descrição</th>
+<th>Exemplos</th>
+<th>Característica dos Ocupantes</th>
+<th>Velocidade de Desenvolvimento do Incêndio</th>
+<th>Perfil Risco à Vida</th>
+  </tr>
+  <tr>
+<td><input type="radio" id="I1" name="densidade" value="0.33">I1</td>
+<td><label for="I1">Locais com atividades e materiais utilizados de baixo potencial de incêndio, com carga de 2 incêndio até 300MJ/m</label></td>
+<td>Atividades que manipulam materiais com baixo risco de incêndio, tais como fábricas em geral, onde os processos nãoenvolvem a utilização intensiva de materiais combustíveis (aço; aparelhos de rádio e som; armas; artigos de metal; gesso;esculturas de pedra; ferramentas; fotogravuras; jóias; relógios; sabão; serralheria; suco de frutas; louças; metais; máquinas).</td>
+<td>a</td>
+<td>1</td>
+<td>a1</td>
+  </tr>
+  <tr>
+<td><input type="radio" id="I2" name="densidade" value="0.33">I2</td>
+<td><label for="I2">Locais com atividades emateriais utilizados de baixo potencial de incêndio, com carga de  incêndio acima de 300 até 1.200MJ/m² </label></td>
+<td>Atividades com artigos de vidro; automóveis, bebidas destiladas; instrumentos  musicais; móveis; alimentos marcenarias, fábricas de caixas (sem uso de materiais ou equipamentos sintéticos que conduzem rapidamente a inflamação generalizada).</td>
+<td>a</td>
+<td>2</td>
+<td>a2</td>
+  </tr>
+  <tr>
+<td><input type="radio" id="I2" name="densidade" value="0.33">I2</td>
+<td><label for="I2">Locais com atividades emateriais utilizados de baixo potencial de incêndio, com carga de  incêndio acima de 300 até 1.200MJ/m² </label></td>
+<td>Atividades com artigos de vidro; automóveis, bebidas destiladas; instrumentos  musicais; móveis; alimentos marcenarias, fábricas de caixas (sem uso de materiais ou equipamentos sintéticos que conduzem rapidamente a inflamação generalizada).</td>
+<td>a</td>
+<td>3</td>
+<td>a3</td>
+  </tr>
+  <tr>
+<td><input type="radio" id="I3" name="densidade" value="0.33">I3</td>
+<td><label for="I3">Locais onde há alto risco de incêndio. Locais com carga de incêndio superior a 1.200MJ/m²</label></td>
+<td>Fabricação de explosivos, atividades industriais que envolvam líquidos e gases inflamáveis,  materiais oxidantes, destilarias, refinarias, ceras, espuma sintética, elevadores de grãos, tintas, borracha .</td>
+<td>a</td>
+<td>3</td>
+<td>a3</td>
+  </tr>
+</table>
+<br><br>
+
+<table class="minhaTabela">
+  <caption style="font-weight: bold; text-align: left;">Grupo J - Depósito</caption>
+  <tr>
+<th>Divisão</th>
+<th>Descrição</th>
+<th>Exemplos</th>
+<th>Característica dos Ocupantes</th>
+<th>Velocidade de Desenvolvimento do Incêndio</th>
+<th>Perfil Risco à Vida</th>
+  </tr>
+  <tr>
+<td><input type="radio" id="J1" name="densidade" value="0.33">J1</td>
+<td><label for="J1">Depósitos de material incombustível.</label></td>
+<td>Edificações sem processo industrial que armazenam tijolos, pedras, areias, cimentos, metais e outros materiais incombustíveis.</td>
+<td>a</td>
+<td>1</td>
+<td>a1</td>
+  </tr>
+  <tr>
+<td><input type="radio" id="J2" name="densidade" value="0.33">J2</td>
+<td><label for="J2">Todo tipo de Depósito.</label></td>
+<td>Depósitos com carga de 2 incêndio até 300MJ/m , com o uso de material pouco combustível, distribuído de  modo descontínuo.</td>
+<td>a</td>
+<td>1</td>
+<td>a1</td>
+  </tr>
+  <tr>
+<td><input type="radio" id="J2" name="densidade" value="0.33">J2</td>
+<td><label for="J2">Todo tipo de Depósito.</label></td>
+<td>Depósitos com carga de 2 incêndio até 300MJ/m ,(sem uso de materiais ou equipamentos sintéticos que conduzem rapidamente a inflamação generalizada).</td>
+<td>a</td>
+<td>2</td>
+<td>a2</td>
+  </tr>
+  <tr>
+<td><input type="radio" id="J3" name="densidade" value="0.33">J3</td>
+<td> <label for="J3">Todo tipo de Depósito.</label></td>
+<td>Depósitos c/carga incêndio 2 acima de 300 até 1.200MJ/m² (sem uso de materiais ou equipamentos sintéticos que conduzem rapidamente a inflamação generalizada).</td>
+<td>a</td>
+<td>2</td>
+<td>a2</td>
+  </tr>
+  <tr>
+<td><input type="radio" id="J3" name="densidade" value="0.33">J3</td>
+<td> <label for="J3">Todo tipo de Depósito.</label></td>
+<td>Depósitos c/carga incêndio 2 acima de 300 até 1.200MJ/m² (com uso de materiais ou equipamentos sintéticos que conduzem rapidamente a inflamação generalizada).</td>
+<td>a</td>
+<td>3</td>
+<td>a3</td>
+  </tr>
+  <tr>
+<td><input type="radio" id="J4" name="densidade" value="0.33">J4</td>
+<td><label for="J4">Todo tipo de Depósito.</label></td>
+<td>Depósitos onde a carga incêndio ultrapassa a 1.200MJ/m2 (sem uso de materiais ou equipamentos sintéticos que conduzem rapidamente a inflamação generalizada)</td>
+<td>a</td>
+<td>2</td>
+<td>a2</td>
+  </tr>
+  <tr>
+<td><input type="radio" id="J4" name="densidade" value="0.33">J4</td>
+<td><label for="J4">Todo tipo de Depósito.</label></td>
+<td>Depósitos onde a carga incêndio ultrapassa a 1.200MJ/m2 (com uso de materiais ou equipamentos sintéticos que conduzem rapidamente a inflamação generalizada)</td>
+<td>a</td>
+<td>3</td>
+<td>a3</td>
+  </tr>
+</table>
+<br><br>
+
+<table class="minhaTabela">
+  <caption style="font-weight: bold; text-align: left;">Grupo L - Explosivos</caption>
+
+  <tr>
+<th>Divisão</th>
+<th>Descrição</th>
+<th>Exemplos</th>
+<th>Característica dos Ocupantes</th>
+<th>Velocidade de Desenvolvimento do Incêndio</th>
+<th>Perfil Risco à Vida</th>
+  </tr>
+  <tr>
+<td><input type="radio" id="L1" name="densidade" value="0.33">L1</td>
+<td><label for="L1">Comércio.</label></td>
+<td>Comércio em geral de fogos de artifício e assemelhados.</td>
+<td>b</td>
+<td>4</td>
+<td>b4</td>
+  </tr>
+  <tr>
+<td><input type="radio" id="L2" name="densidade" value="0.33">L2</td>
+<td><label for="L2">Indústria.</label></td>
+<td>Indústria de material explosivo</td>
+<td>a</td>
+<td>4</td>
+<td>a4</td>
+  </tr>
+  <tr>
+<td><input type="radio" id="L3" name="densidade" value="0.33">L3</td>
+<td>Depósito.<label for="L3">L3</label></td>
+<td>Depósito de material explosivo.</td>
+<td>a</td>
+<td>4</td>
+<td>a4</td>
+  </tr>
+</table>
+<br><br>
+
+<table class="minhaTabela">
+  <caption style="font-weight: bold; text-align: left;">Grupo L - Explosivos</caption>
+
+  <tr>
+<th>Divisão</th>
+<th>Descrição</th>
+<th>Exemplos</th>
+<th>Característica dos Ocupantes</th>
+<th>Velocidade de Desenvolvimento do Incêndio</th>
+<th>Perfil Risco à Vida</th>
+  </tr>
+  <tr>
+<td   ><input type="radio" id="M1" name="densidade" value="0.33">M1</td>
+<td   ><label for="M1">Túnel.</label></td>
+<td   >Túnel rodoferroviário e lacustre, destinados a transporte de passageiros ou cargas diversas.</td>
+<td   >e</td>
+<td   >1</td>
+<td   >e1</td>
+  </tr>
+  <tr>
+<td   ><input type="radio" id="M2" name="densidade" value="0.33">M2</td>
+<td   ><label for="M2">Tanques ou Parque de Tanques..</label></td>
+<td   >Edificação destinada a produção, manipulação, armazenamento e distribuição de líquidos ou gases combustíveis e inflamáveis.</td>
+<td   >a</td>
+<td   >4</td>
+<td   >a4</td>
+  </tr>
+  <tr>
+<td   ><input type="radio" id="M3" name="densidade" value="0.33">M3</td>
+<td   ><label for="M3">Central de comunicação e energia</label></td>
+<td   >Central telefônica, centros de comunicação, centrais de transmissão, de distribuição de energia e central de Processamentos de dados..</td>
+<td   >a</td>
+<td   >3</td>
+<td   >a3</td>
+  </tr>
+  <tr>
+<td   ><input type="radio" id="M4" name="densidade" value="0.33">M4</td>
+<td   ><label for="M4">Propriedade em transformação.</label></td>
+<td   >Locais em demolição ou construção</td>
+<td   >a</td>
+<td   >2</td>
+<td   >a2</td>
+  </tr>
+  <tr>
+<td   ><input type="radio" id="M5" name="densidade" value="0.33">M5</td>
+<td   ><label for="M5">Silos</label></td>
+<td   >Armazéns de grãos e assemelhados</td>
+<td   >a</td>
+<td   >4</td>
+<td   >a4</td>
+  </tr>
+  <tr>
+<td   ><input type="radio" id="M6" name="densidade" value="0.33">M6</td>
+<td   ><label for="M6">Terra selvagem.</label></td>
+<td   >Floresta reserva ecológica parque florestal.s</td>
+<td   >a</td>
+<td   >2</td>
+<td   >a2</td>
+  </tr>
+  <tr>
+<td   ><input type="radio" id="M6" name="densidade" value="0.33">M7</td>
+<td   ><label for="M7">Pátio de Containers..</label></td>
+<td   >Área aberta destinada a armazenamento de containers</td>
+<td   >a</td>
+<td   >1</td>
+<td   >a1</td>
+  </tr>
+  
+</table>
+<br><br>
+
+
+   
+
+   </form>
+
+<script src="funcoesAnalise.js"></script>
+</body>
+</html>
