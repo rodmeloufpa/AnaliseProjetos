@@ -29,6 +29,7 @@ if(populacao<=50){
 }
 }
 
+//Acrescentar outras variáveis
 function LarguraPortaMinima(populacao,areaEdificacao){
 var A1 = document.getElementById("A1").checked;
 var A2 = document.getElementById("A2").checked;
@@ -46,6 +47,17 @@ var E1 = document.getElementById("E1").checked;
 var E2 = document.getElementById("E2").checked;
 var E3 = document.getElementById("E3").checked;
 var E4 = document.getElementById("E4").checked;
+var E5 = document.getElementById("E5").checked;
+var E6 = document.getElementById("E6").checked;
+var F6 = document.getElementById("F6").checked;
+
+var F6a = document.getElementById("F6a").checked;
+var F7 = document.getElementById("F7").checked;
+var F7a = document.getElementById("F7a").checked;
+var F7b = document.getElementById("F7b").checked;
+var F8 = document.getElementById("F8").checked;
+var F8a = document.getElementById("F8a").checked;
+var F9 = document.getElementById("F9").checked;
 var E5 = document.getElementById("E5").checked;
 var E6 = document.getElementById("E6").checked;
 var F6 = document.getElementById("F6").checked;
